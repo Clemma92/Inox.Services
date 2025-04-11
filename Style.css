@@ -67,7 +67,6 @@ ul{
     align-items: center;
     position:relative;
     width:100%;
-    height:100vh;
     overflow: hidden;
 }
 .sfondo::after{
@@ -92,14 +91,16 @@ video{
     position:relative;
     z-index:1;
     display:flex;
-    width: 90%;
+    width:90%;
+    min-width: 800px;
+    flex-wrap:wrap;
     justify-content: space-between;
 }
 .box>.box-testo{
     z-index: 2;
     overflow:visible;
     display:block;
-    width: 400px;
+    max-width: 400px;
     height: auto;
     padding:15px;
     border-radius: 15px;
