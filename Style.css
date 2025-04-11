@@ -124,7 +124,7 @@ video{
 }
 h1{
     margin:0;
-    padding-bottom:1vw;
+    padding-bottom:0.5vw;
     font-size:calc(1em + 1vw + 1vh);
 }
 p{
