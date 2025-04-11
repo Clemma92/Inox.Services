@@ -1,6 +1,5 @@
 const video = document.querySelector('video');
 const sfondo = document.querySelector('.sfondo');
-video.playbackRate = 5;
 function adjustSfondo() {
 const navbar = document.querySelector('nav');
 const navbarHeight = navbar.offsetHeight;
@@ -20,7 +19,7 @@ function CambiaSfondo(callback) {
     if(callback){
         sfondo.addEventListener('transitionend', () =>{
             for (let i=0; i<box.length; i++){
-                setTimeout(() =>callback(i, box),800 * i)
+                setTimeout(() =>callback(i, box),400 * i)
             }
         }, {once: true});          
     }
