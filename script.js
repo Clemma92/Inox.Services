@@ -8,18 +8,21 @@ const viewportHeight = document.documentElement.clientHeight;
 sfondo.style.top = `${navbarHeight}px`;
 sfondo.style.height = `${viewportHeight - navbarHeight}px`;
 }
-function SlittaBox(numero){
-    let box = document.querySelectorAll('.box-testo');
+function SlittaBox(numero, box){
     if (numero < 0 || numero >= box.length) return;
     box[numero].style.transform = 'translateX(0px)';
-    setTimeout(() =>{if (numero === box.length - 1) {document.querySelector('button').classList.add('mostra');}},1000);
+    setTimeout(() =>{if (numero === box.length - 1) {document.querySelector('button').classList.add('mostra');}},800);
 }
 function CambiaSfondo(callback) {
+    let box = document.querySelectorAll('.box-testo');
     video.style.display = 'none';
     sfondo.classList.add('mostra-sfondo');
     if(callback){
-        let i=0;
-        sfondo.addEventListener('transitionend', () => callback(i++));
+        sfondo.addEventListener('transitionend', () =>{
+            for (let i=0; i<box.length; i++){
+                setTimeout(() =>callback(i, box),800 * i)
+            }
+        }, {once: true});          
     }
 }
 window.addEventListener('load', adjustSfondo);
