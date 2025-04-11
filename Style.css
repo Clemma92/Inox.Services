@@ -1,0 +1,160 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    position:relative;
+    background-color:black;
+    margin:0px;
+    font-size:20px;
+    font-weight: bold;
+    transition:background 0.5s ease-in-out;
+}
+nav{
+    display:flex;
+    position:fixed;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0px 0px 5px black;
+    width: 100%;
+    top:0;
+    left:0;
+    background: linear-gradient(to right, #e4e4e4 15%, #9c9c9c,#ececec 55%,#bababa,#f7f7f7);
+    padding:10px 20px;
+    justify-content:space-between;
+    align-items: flex-end;
+}
+nav>img{
+    width:200px;
+    height:auto;
+}
+ul{
+    list-style:none;
+    display:flex;
+    gap:50px;
+    padding:0px;
+    margin:0px;
+}
+.menu-elm{
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.menu-elm:hover{
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.1);
+    transform: translateY(-5px) scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.menu-elm::after{
+    content: "";
+    display: block;
+    position:absolute;
+    bottom:-3px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+    transform:scalex(0);
+}
+.menu-elm:hover::after{
+    transform:scalex(1);
+}
+.sfondo{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+}
+.sfondo::after{
+    content: '';
+    position:fixed;
+    z-index:0;
+    inset:0;
+    opacity:0;
+    background-image: url(./Assets/Immagine\ cucina.png);
+    background-size: cover;
+    transition:opacity 0.5s ease-in-out;
+}
+.sfondo.mostra-sfondo::after{
+    opacity:1;
+}
+video{
+    position:absolute;
+    top:-125px;
+    scale:0.8;
+}
+.box{
+    position:relative;
+    z-index:1;
+    display:flex;
+    width: 90%;
+    justify-content: space-between;
+}
+.box>.box-testo{
+    z-index: 2;
+    overflow:visible;
+    display:block;
+    width: 400px;
+    height: auto;
+    padding:15px;
+    border-radius: 15px;
+    transform:translateX(1920px);
+    transition: transform 0.8s ease-in-out, scale 0.3s ease-in-out;
+    box-shadow: black 3px 3px 5px;
+    cursor: pointer;
+}
+.box>.box-testo:hover{
+    scale:1.1;
+}
+.box>.box-testo:nth-child(1){
+    background-color: #F4F8D3;
+}
+.box>.box-testo:nth-child(2){
+    background-color: #A6D6D6;
+}
+.box>.box-testo:nth-child(3){
+    background-color: #8E7DBE;
+}
+h1{
+    font-size:4rem;
+}
+p{
+    font-size:1.5rem;
+    margin:0px;
+    text-align: justify;
+}
+h1.viola{
+    margin:0;
+    color:rgb(132, 128, 250)
+}
+h1.rosa{
+    margin:0;
+    color:#b34339;
+}
+h1.giallo{
+    margin:0;
+    color:rgb(255, 230, 69)
+}
+button{
+    z-index:3;
+    position:relative;
+    top:80px;
+    opacity:0;
+    background-color: red;
+    font-size:1.5rem;
+    border:none;
+    padding:10px;
+    border-radius:15px;
+    box-shadow: black 3px 3px 5px;
+    transition: scale 0.2s ease-in-out ,opacity 0.4s ease-in-out;
+}
+.mostra{
+    opacity:1;
+}
+button:hover{
+    scale:1.1;
+}
