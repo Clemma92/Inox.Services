@@ -128,7 +128,8 @@ h1{
     font-size:calc(1em + 1vw + 1vh);
 }
 p{
-    font-size:calc(0.3em + 0.8vw + 0.4vh);
+    font-size:calc(0.3em + 0.8vw + 0.9vh);
+    font-weight:bold;
     margin:0px;
     scale:20vh;
     text-align: justify;
