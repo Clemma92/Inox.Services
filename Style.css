@@ -155,7 +155,7 @@ h1.giallo{
 }
 .btn-container{
     position:relative;
-    top:88vh;
+    top:88dvh;
     margin:0;
     padding:0;
     z-index: 4;
@@ -209,10 +209,9 @@ header{
         max-height: 100dvh;
         flex-direction:column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         padding:0;
         gap:1dvh;
-        justify-content: center;
         transform-origin: top;
     }
 
@@ -258,27 +257,34 @@ header{
         z-index:3;
         color:white;
     }
-    button{
+    .btn-container{
+        display: flex;
+        top:2dvh;
         position: relative;
         text-anchor: middle;
-        flex:1;
-        justify-self: flex-start;
+        width: 100vw;
+        z-index:6;
+        opacity:1;
+        transition: scale 0.2s ease-in-out ,opacity 0.4s ease-in-out;
+        align-self:center;
+    }
+    button{
+        position:relative;
+        font-size:clamp(0.1rem, 1vw + 1dvh, 1rem);
         min-height: 2dvh;
         max-height: 5dvh;
         max-width:30vw;
-        z-index:3;
-        opacity:0;
-        background-color: red;
-        font-size:clamp(0.1rem, 1vw + 1dvh, 1rem);
         border:none;
         padding:10px;
         border-radius:15px;
+        background-color: red;
         box-shadow: black 3px 3px 5px;
-        transition: scale 0.2s ease-in-out ,opacity 0.4s ease-in-out;
-        align-self:center;
     }
     .sfondo{
         display: flex;
         overflow: hidden;
+    }
+    h1{
+        text-wrap: wrap;
     }
 }    
