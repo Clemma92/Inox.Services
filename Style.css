@@ -112,7 +112,7 @@ video{
     cursor: pointer;
 }
 .box>.box-testo:hover{
-    scale:1.1;
+    scale:1.05;
 }
 .box>.box-testo:nth-child(1){
     background-color: #F4F8D3;
@@ -171,7 +171,7 @@ button:hover{
     opacity:1;
 }
 
-@media (max-width:1024px)
+/* @media (max-width:1024px)
 {
     .box{
         flex-direction:column;
@@ -221,8 +221,8 @@ button:hover{
         background-color: black;
         transform: translate(0, 50%);
     }
-    nav>img{
-        width:auto;
-        height:auto;
+    nav>.logo{
+        width:10px;
+        height:10px;
     }
-}    
+}     */
