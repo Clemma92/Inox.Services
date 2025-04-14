@@ -170,15 +170,18 @@ button:hover{
 .mostra{
     opacity:1;
 }
+header{
+    display:none;
+}
 
-/* @media (max-width:1024px)
+@media (max-width:1024px)
 {
     .box{
         flex-direction:column;
         position:relative;
         align-items: center;
         min-height: 50vh;
-        max-height:80vh;
+        max-height:90vh;
         min-width: 60vw;
         max-width:70vw;
         overflow: auto;
@@ -207,22 +210,27 @@ button:hover{
         text-align: center;
         gap:3vh;
     }
-    .logo{
-        width: 100%;
-        height: auto;
-    }
     header{
-        display:block;
+        display:flex;
         position:relative;
-        z-index:10000;
-        width:auto;
-        height:1vh;
-        padding:1vh;
+        z-index:2;
+        width:100vw;
+        height:6vh;
         background-color: black;
-        transform: translate(0, 50%);
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5vw;
+    }  
+    .sx .center .dx{
+        flex:1;
+    }      
+
+    header .logo{
+            width:20vw;
+            height:auto;
+            }
+    .menu-btn{
+        z-index:3;
+        color:white;
     }
-    nav>.logo{
-        width:10px;
-        height:10px;
-    }
-}     */
+}    
