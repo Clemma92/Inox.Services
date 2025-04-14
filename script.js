@@ -8,13 +8,13 @@ function adjustSfondo() {
         sfondo.style.top = `${navbarHeight}px`;
         sfondo.style.height = `${viewportHeight - navbarHeight}px`;
     }
-    // else{
-    //     const navbar = document.querySelector('header');
-    //     const navbarHeight = navbar.offsetHeight;
-    //     const viewportHeight = document.documentElement.clientHeight;
-    //     sfondo.style.top = `${navbarHeight}px`;
-    //     sfondo.style.height = `${viewportHeight - navbarHeight}px`;
-    // }
+    else{
+        const navbar = document.querySelector('header');
+        const navbarHeight = navbar.offsetHeight;
+        const viewportHeight = document.documentElement.clientHeight;
+        sfondo.style.top = `${navbarHeight}px`;
+        sfondo.style.height = `${viewportHeight - navbarHeight}px`;
+    }
 }
 function SlittaBox(numero, box){
     if (numero < 0 || numero >= box.length) return;
