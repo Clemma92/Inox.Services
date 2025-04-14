@@ -178,7 +178,10 @@ button:hover{
         align-items: center;
         height: 50vh;
         overflow: auto;
-        
-        
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .box-testo{
+        size:cover;
     }
 }    
