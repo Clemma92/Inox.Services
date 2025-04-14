@@ -193,22 +193,22 @@ header{
         justify-content: space-between;
     }
     .box{
-        box-sizing: border-box;
         width:100vw;
-        display:block;
-        position:relative;
-        margin:50% 50%;
-        transform-origin: center;
-        padding:0;
+        min-height:90vh;
+        max-height: 100vh;
+        flex-direction:column;
         align-items: center;
+        justify-content: center;
+        padding:0;
+        gap:1vh;
+        justify-content: flex-start;
+        transform-origin: top;
     }
 
     .box>.box-testo{
         min-width: 50vw;
         max-width: 60vw;
-    }
-    button{
-        flex:1;
+        font-size:clamp(0.5em, 2vw + 2vh, 0.5rem);
     }
     nav{
         transform: translateX(-100vw);
@@ -248,21 +248,25 @@ header{
         color:white;
     }
     button{
+        text-anchor: middle;
+        flex:1;
+        justify-self: flex-start;
+        min-height: 2vh;
         max-height: 5vh;
+        max-width:30vw;
         z-index:3;
         opacity:0;
         background-color: red;
-        font-size:2.5vw;
+        font-size:clamp(0.1rem, 1vw + 1vh, 1rem);
         border:none;
         padding:10px;
         border-radius:15px;
         box-shadow: black 3px 3px 5px;
         transition: scale 0.2s ease-in-out ,opacity 0.4s ease-in-out;
+        align-self:center;
     }
     .sfondo{
         display: flex;
         overflow: hidden;
-    }
-    button{
     }
 }    
