@@ -169,3 +169,16 @@ button:hover{
 .mostra{
     opacity:1;
 }
+
+@media (max-width:1024px)
+{
+    .box{
+        flex-direction:column;
+        position:relative;
+        align-items: center;
+        height: 50vh;
+        overflow: auto;
+        
+        
+    }
+}    
