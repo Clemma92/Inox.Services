@@ -178,6 +178,7 @@ button:hover{
         align-items: center;
         height: 100vh;
         width: 80vw;
+        min-width: 80vw;
         overflow: auto;
         justify-content: space-between;
         gap: 10px;
