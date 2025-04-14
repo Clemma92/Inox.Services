@@ -6,6 +6,7 @@ html{
     height: 100vh;
 }
 body{
+    height: 100vh;
     display:flex;
     position:relative;
     background-color:black;
