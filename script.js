@@ -18,7 +18,7 @@ function adjustSfondo() {
 }
 function SlittaBox(numero, box){
     if (numero < 0 || numero >= box.length) return;
-    box[numero].style.transform = 'translateX(0px)';
+    box[numero].style.transform = 'translateX(0)';
     setTimeout(() =>{if (numero === box.length - 1) {document.querySelector('button').classList.add('mostra');}},800);
 }
 function CambiaSfondo(callback) {

@@ -7,7 +7,6 @@ html{
 }
 body{
     height: 100vh;
-    display:flex;
     position:relative;
     background-color:black;
     margin:0px;
@@ -104,7 +103,7 @@ video{
 }
 .box>.box-testo{
     z-index: 2;
-    overflow:visible;
+    overflow:hidden;
     display:block;
     min-width: 10vw;
     max-width: 20vw;
@@ -181,29 +180,39 @@ header{
 
 @media (max-width:1024px)
 {
-    .box{
-
-        flex-direction:column;
-        position:relative;
-        align-items: center;
-        min-height: 50vh;
-        max-height:90vh;
-        min-width: 60vw;
-        max-width:70vw;
-        overflow: auto;
-        justify-content: space-between;
-        gap: 10px;
-        padding:10px;
+    .logo.center{
+        height:100%;
+        width:auto;
+        display:block;
     }
+    body{
+        box-sizing: border-box;
+        height: 90vh;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .box{
+        box-sizing: border-box;
+        width:100vw;
+        display:block;
+        position:relative;
+        margin:50% 50%;
+        transform-origin: center;
+        padding:0;
+        align-items: center;
+    }
+
     .box>.box-testo{
         min-width: 50vw;
-        max-width: 80vw;
+        max-width: 60vw;
     }
     button{
-        top:1vh;
+        flex:1;
     }
     nav{
         transform: translateX(-100vw);
+        display:none;
         height:100%;
         width:100vw;
         flex-direction: column;
@@ -212,31 +221,48 @@ header{
         align-items: center;
     }
     ul{
+        display:none;
         flex-direction: column;
         text-align: center;
         gap:3vh;
     }
     header{
         display:flex;
-        position:relative;
         z-index:2;
         width:100vw;
-        height:6vh;
-        background-color: black;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 5vw;
-    }  
-    .sx .center .dx{
+        max-height: 4vh;
         flex:1;
-    }      
+        background-color: black;
+        justify-content:space-around;
+        gap:15vw;
+        align-items: center;
+        padding:1vw 0;
 
-    header .logo{
-            width:10vh;
-            height:auto;
-            }
+    }  
+    .sx .dx{
+        flex:1;
+    }
+
     .menu-btn{
         z-index:3;
         color:white;
+    }
+    button{
+        max-height: 5vh;
+        z-index:3;
+        opacity:0;
+        background-color: red;
+        font-size:2.5vw;
+        border:none;
+        padding:10px;
+        border-radius:15px;
+        box-shadow: black 3px 3px 5px;
+        transition: scale 0.2s ease-in-out ,opacity 0.4s ease-in-out;
+    }
+    .sfondo{
+        display: flex;
+        overflow: hidden;
+    }
+    button{
     }
 }    
