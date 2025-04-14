@@ -176,7 +176,7 @@ button:hover{
         flex-direction:column;
         position:relative;
         align-items: center;
-        max-height:65vh;
+        max-height:50vh;
         width: 80vw;
         min-width: 80vw;
         overflow: auto;
