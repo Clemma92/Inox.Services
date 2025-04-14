@@ -6,6 +6,7 @@ html{
     height: 100vh;
 }
 body{
+    display:flex;
     position:relative;
     background-color:black;
     margin:0px;
