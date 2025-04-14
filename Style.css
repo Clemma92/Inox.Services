@@ -66,9 +66,10 @@ ul{
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    position:relative;
+    position:fixed;
     width:100%;
     overflow: hidden;
+    height:100vh;
 }
 .sfondo::after{
     content: '';
@@ -103,7 +104,7 @@ video{
     min-width: 10vw;
     max-width: 20vw;
     max-height: 70vh;
-    padding:0vh 2vh 3vh 2vh;
+    padding:1vh 2vh 3vh 2vh;
     border-radius: 2vh;
     transform:translateX(100vw);
     transition: transform 0.8s ease-in-out, scale 0.3s ease-in-out;
@@ -177,9 +178,9 @@ button:hover{
         position:relative;
         align-items: center;
         min-height: 50vh;
-        max-height:100vh;
-        min-width: 80vw;
-        max-width:90vw;
+        max-height:80vh;
+        min-width: 60vw;
+        max-width:70vw;
         overflow: auto;
         justify-content: space-between;
         gap: 10px;
@@ -191,5 +192,37 @@ button:hover{
     }
     button{
         top:1vh;
+    }
+    nav{
+        transform: translateX(-100vw);
+        height:100%;
+        width:100vw;
+        flex-direction: column;
+        justify-content: start;
+        gap:4vh;
+        align-items: center;
+    }
+    ul{
+        flex-direction: column;
+        text-align: center;
+        gap:3vh;
+    }
+    .logo{
+        width: 100%;
+        height: auto;
+    }
+    header{
+        display:block;
+        position:relative;
+        z-index:10000;
+        width:auto;
+        height:1vh;
+        padding:1vh;
+        background-color: black;
+        transform: translate(0, 50%);
+    }
+    nav>img{
+        width:auto;
+        height:auto;
     }
 }    

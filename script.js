@@ -1,11 +1,13 @@
 const video = document.querySelector('video');
 const sfondo = document.querySelector('.sfondo');
 function adjustSfondo() {
-const navbar = document.querySelector('nav');
-const navbarHeight = navbar.offsetHeight;
-const viewportHeight = document.documentElement.clientHeight;
-sfondo.style.top = `${navbarHeight}px`;
-sfondo.style.height = `${viewportHeight - navbarHeight}px`;
+    if(window.matchMedia("(min-width: 1024px)").matches){
+        const navbar = document.querySelector('nav');
+        const navbarHeight = navbar.offsetHeight;
+        const viewportHeight = document.documentElement.clientHeight;
+        sfondo.style.top = `${navbarHeight}px`;
+        sfondo.style.height = `${viewportHeight - navbarHeight}px`;
+    }
 }
 function SlittaBox(numero, box){
     if (numero < 0 || numero >= box.length) return;
