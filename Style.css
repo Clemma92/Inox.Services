@@ -130,7 +130,7 @@ video{
 h1{
     margin:0;
     padding-bottom:0.5vw;
-    font-size:calc(1em + 1vw + 1dvh);
+    font-size:clamp(1em, 1em + 1vw + 1dvh,2em + 1vw + 1dvh);
 }
 p{
     font-size:calc(0.3em + 0.8vw + 0.9dvh);
