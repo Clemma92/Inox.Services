@@ -176,7 +176,7 @@ button:hover{
         flex-direction:column;
         position:relative;
         align-items: center;
-        height: 100vh;
+        max-height:70vh;
         width: 80vw;
         min-width: 80vw;
         overflow: auto;
@@ -186,5 +186,8 @@ button:hover{
     }
     .box>.box-testo{
         max-width: 50vw;
+    }
+    button{
+        top:1vh;
     }
 }    
