@@ -87,8 +87,20 @@ function animateIn(e){
     }
 }
 
+function ridimensionamento(){
+    let navBar = document.querySelector('nav');
+    if (window.matchMedia("(min-width: 1024px)").matches){
+        navBar.style.transform='translate(0vw)';
+    }
+    else{
+        navBar.style.transform='translate(-100vw)';
+
+    }
+}
+
 video.addEventListener('ended', () => CambiaSfondo(SlittaBox));
 document.querySelector('.menu-btn').addEventListener('click', animateOut);
+window.addEventListener("resize", ridimensionamento);
 document.addEventListener('click', animateIn);
 
 
