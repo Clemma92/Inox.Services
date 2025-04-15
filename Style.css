@@ -226,7 +226,6 @@ header{
     }
 
     header{
-        padding: 0 5vw;
         display:flex;
         grid-area: 1/1/2/2;
         z-index:2;
@@ -236,6 +235,10 @@ header{
     }  
 
     .menu-btn{
+        text-align: center;
+        width:2vh;
+        height: 2vh;
+        line-height:2.2vh;
         z-index:3;
         color:white;
         align-self: center;
