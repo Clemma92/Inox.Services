@@ -220,7 +220,7 @@ header{
         gap:4dvh;
         align-items: flex-end;
         transition: transform 0.8s ease-in-out;
-        background: linear-gradient(to bottom, #e4e4e4 15%, #9c9c9c,#ececec 55%,#bababa,#f7f7f7);
+        background: linear-gradient(to top, #e4e4e4, #9c9c9c,#ececec,#bababa,#f7f7f7);
 
     }
 
