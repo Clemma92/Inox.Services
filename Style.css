@@ -200,7 +200,7 @@ header{
     .box>.box-testo{
         min-width: 50vw;
         max-width: 60vw;
-        font-size:clamp(0.1em, 2vw + 2dvh, 0.5rem);
+        font-size:clamp(0.05em, 2vw + 2dvh, 0.5rem);
     }
     nav{
         transform: translateX(-100vw);
