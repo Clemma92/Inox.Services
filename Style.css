@@ -2,11 +2,11 @@ a{
     text-decoration: none;
     color: black;
 }
-html{
-    height: 100dvh;
-}
 body{
+    display:grid;
+    grid-template-rows: 6dvh 8fr 1fr;
     height: 100dvh;
+    align-content: center;
     position:relative;
     background-color:black;
     margin:0px;
@@ -16,12 +16,11 @@ body{
 }
 nav{
     display:flex;
-    position:fixed;
+    grid-area: 1/1/2/2;
     box-sizing: border-box;
     z-index: 1000;
     box-shadow: 0px 0px 5px black;
     font-size:2.5em;
-    width: 100%;
     top:0;
     left:0;
     background: linear-gradient(to right, #e4e4e4 15%, #9c9c9c,#ececec 55%,#bababa,#f7f7f7);
@@ -29,9 +28,9 @@ nav{
     justify-content:space-between;
     align-items: flex-end;
 }
-nav>img{
-    width:calc(10vw + 7dvh);
-    height:auto;
+.logo{
+    flex:3;
+    object-fit: contain;
 }
 ul{
     list-style:none;
@@ -66,14 +65,10 @@ ul{
     transform:scalex(1);
 }
 .sfondo{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    position:fixed;
-    width:100%;
-    overflow: hidden;
-    height:100dvh;
+    position: fixed;
+    grid-area: 2/1/3/2;
+    justify-self: center;
+    align-self: center;
 }
 .sfondo::after{
     content: '';
@@ -94,16 +89,19 @@ video{
     
 }
 .box{
-    position:relative;
+    box-sizing: border-box;
+    grid-area:2/1/3/2 Cards;
+    overflow: hidden;
     z-index:1;
     display:flex;
-    width:90vw;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 10vw;
+    padding:20px;
     
 }
 .box>.box-testo{
     z-index: 2;
-    overflow:hidden;
+
     display:block;
     min-width: 10vw;
     max-width: 20vw;
@@ -154,8 +152,8 @@ h1.giallo{
     color:rgb(255, 230, 69)
 }
 .btn-container{
+    grid-area: 3/1/4/2 ;
     position:relative;
-    top:88dvh;
     margin:0;
     padding:0;
     z-index: 4;
@@ -191,28 +189,12 @@ header{
 
 @media (max-width:1024px)
 {
-    .logo.center{
-        height:100%;
-        width:auto;
-        display:block;
-    }
-    body{
-        box-sizing: border-box;
-        height: 90dvh;
-        display:flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
     .box{
-        width:100vw;
-        min-height:90dvh;
-        max-height: 100dvh;
+        grid-area: 2/1/3/2;
+        display:flex;
         flex-direction:column;
         align-items: center;
-        justify-content: flex-start;
-        padding:0;
         gap:1dvh;
-        transform-origin: top;
     }
 
     .box>.box-testo{
@@ -236,37 +218,30 @@ header{
         text-align: center;
         gap:3dvh;
     }
-    header{
-        display:flex;
-        z-index:2;
-        width:100vw;
-        max-height: 4dvh;
-        flex:1;
-        background-color: black;
-        justify-content:space-around;
-        gap:15vw;
-        align-items: center;
-        padding:1vw 0;
 
+    header{
+        padding:1vh 5vw;
+        display:flex;
+        grid-area: 1/1/2/2;
+        z-index:2;
+        background-color: black;
+        flex-direction: row;
     }  
-    .sx .dx{
-        flex:1;
-    }
 
     .menu-btn{
         z-index:3;
         color:white;
+        align-self: center;
+        padding:1vw 1vw 1vw 1vw;
+        border: white solid;
+        border-radius: 20%;
     }
     .btn-container{
-        display: flex;
-        top:2dvh;
-        position: relative;
-        text-anchor: middle;
-        width: 100vw;
         z-index:6;
         opacity:1;
         transition: scale 0.2s ease-in-out ,opacity 0.4s ease-in-out;
         align-self:center;
+        justify-self: center;
     }
     button{
         position:relative;
@@ -279,10 +254,6 @@ header{
         border-radius:15px;
         background-color: red;
         box-shadow: black 3px 3px 5px;
-    }
-    .sfondo{
-        display: flex;
-        overflow: hidden;
     }
     h1{
         text-wrap: wrap;
