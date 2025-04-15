@@ -4,7 +4,7 @@ a{
 }
 body{
     display:grid;
-    grid-template-rows: 6dvh 8fr 1fr;
+    grid-template-rows: 7dvh 10fr 1fr;
     height: 100dvh;
     align-content: center;
     position:relative;
@@ -220,7 +220,7 @@ header{
     }
 
     header{
-        padding:1vh 5vw;
+        padding: 0 5vw;
         display:flex;
         grid-area: 1/1/2/2;
         z-index:2;
@@ -232,9 +232,9 @@ header{
         z-index:3;
         color:white;
         align-self: center;
-        padding:1vw 1vw 1vw 1vw;
-        border: white solid;
-        border-radius: 20%;
+        padding:0.5vh;
+        box-shadow: white 0 0 3px;
+        border-radius: 5px;
     }
     .btn-container{
         z-index:6;
