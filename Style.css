@@ -234,9 +234,11 @@ header{
     }
     ul{
         display:flex;
+        padding:0 0 0 1vh;
         flex-direction: column;
         text-align: center;
         gap:3dvh;
+        box-sizing: border-box;
     }
     li{
         text-align:end;
