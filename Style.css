@@ -292,7 +292,7 @@ header{
     p{
         font-size:clamp(0.01rem , 0.8dvh + 1.6vw,2rem);
     }
-    .menu-elm:hover::after{
-        transform:scalex(0.5);
+    .menu-elm::after{
+        display:none;
     }
 }    

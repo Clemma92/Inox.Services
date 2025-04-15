@@ -34,7 +34,9 @@ function CambiaSfondo(callback) {
             }
         }, {once: true});          
     }
-    transitioned = true;
+    document.addEventListener('transitionend', ()=>{
+        transitioned = true
+    });
 }
 
 function animateOut(){
@@ -62,11 +64,12 @@ function animateOut(){
     }
 }
 function animateIn(e){
-    if(!window.matchMedia(("(min-width: 1024)").matches)){
+    let navBar = document.querySelector('nav');
+    const direction = window.getComputedStyle(navBar).flexDirection;
+    if(direction === 'column'){
         let boxContainer = document.querySelectorAll('.box-testo');
         let logoN = document.querySelector('.logo');
         let btnmove = document.querySelector('.btn');
-        let navBar = document.querySelector('nav');
         let menubtn = document.querySelector('.menu-btn');
         if(!navBar.contains(e.target) && !menubtn.contains(e.target)){
             for (let i=0; i<boxContainer.length; i++){
