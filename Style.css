@@ -4,7 +4,7 @@ a{
 }
 body{
     display:grid;
-    grid-template-rows: 7dvh 10fr 1fr;
+    grid-template-rows: 6dvh 10fr 1fr;
     height: 100dvh;
     align-content: center;
     position:relative;
@@ -200,7 +200,7 @@ header{
     .box>.box-testo{
         min-width: 50vw;
         max-width: 60vw;
-        font-size:clamp(0.001em, 2vw + 2dvh, 0.5rem);
+        font-size:clamp(1em, 1.5vw + 1.5dvh, 0.5rem);
     }
     nav{
         transform: translateX(-100vw);
@@ -257,5 +257,8 @@ header{
     }
     h1{
         text-wrap: wrap;
+    }
+    .logo{
+        padding:5px;
     }
 }    
