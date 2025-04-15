@@ -241,6 +241,7 @@ header{
     }
     li{
         padding:0 0 0 3vw;
+        margin:0 0 0 3vw;
         text-align:end;
         font-size: clamp(0.2rem,4vw,2rem);
     }
