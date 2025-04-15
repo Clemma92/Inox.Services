@@ -40,37 +40,50 @@ function CambiaSfondo(callback) {
 function animateOut(){
     let navBar = document.querySelector('nav');
     let boxContainer = document.querySelectorAll('.box-testo');
+    let logoN = document.querySelector('.logo');
+    let btnmove = document.querySelector('.btn');
+    logoN.style.transition = 'transform 0.8s ease-in-out';
+    btnmove.style.transition = 'transform 0.8s ease-in-out, scale 0.4s ease-in-out';
     if (transitioned===true){
-        boxContainer.forEach((boxContainer) =>{boxContainer.style.transition= 'transform 0.4s ease-in-out, scale 0.3s ease-in-out'});
-        boxContainer.forEach((boxContainer) =>{boxContainer.style.transform='translateX(-5vw)'});
-        boxContainer[0].addEventListener('transitionend', () => {
-
-            boxContainer.forEach((boxContainer) =>{
-                boxContainer.style.transform='translateX(10vw)'
-            });
+            setTimeout(() => {
+                boxContainer.forEach((boxContainer) =>{
+                boxContainer.style.transform='translateX(10vw)';
+            });},300);
+            setTimeout(()=>{
+                logoN.style.transform='translate(10vw)';
+            },300);
             setTimeout(()=>{
                 navBar.style.transform='translate(-80vw)';
-
-            },150);
-
-        },{once:true});
-        boxContainer.forEach((boxContainer) =>{
-            boxContainer.style.transition= 'transform 0.8s ease-in-out, scale 0.3s ease-in-out'
-        });
+            },300);
+            setTimeout(()=>{
+                btnmove.style.transform='translate(10vw)';
+            },300);
         transitioned=false;
     }
-    else{
+}
+function animateIn(e){
+    let boxContainer = document.querySelectorAll('.box-testo');
+    let logoN = document.querySelector('.logo');
+    let btnmove = document.querySelector('.btn');
+    let navBar = document.querySelector('nav');
+    let menubtn = document.querySelector('.menu-btn');
+    if(!navBar.contains(e.target) && !menubtn.contains(e.target)){
             for (let i=0; i<boxContainer.length; i++){
-                setTimeout(() =>SlittaBox(i, boxContainer),400 * i);
+                setTimeout(() =>SlittaBox(i, boxContainer),100 * i);
             }
+            setTimeout(()=>{
+                btnmove.style.transform='translate(0)';
+            },100);
+            setTimeout(()=>{
+                logoN.style.transform='translate(0)';
+            },100);
             navBar.style.transform='translate(-100vw)';
-            sfondo.addEventListener('click', ()=>{navBar.style.transform='translate(-100vw)';});
             transitioned=true;
         }
-}
+    }
 
 video.addEventListener('ended', () => CambiaSfondo(SlittaBox));
 document.querySelector('.menu-btn').addEventListener('click', animateOut);
-
+document.addEventListener('click', animateIn);
 
 
