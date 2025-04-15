@@ -220,13 +220,10 @@ header{
         gap:4dvh;
         align-items: flex-end;
         transition: transform 0.8s ease-in-out;
+        background: linear-gradient(to bottom, #e4e4e4 15%, #9c9c9c,#ececec 55%,#bababa,#f7f7f7);
 
     }
-    nav::after{
-        background-image: url(./Assets/Transparent_X.png);
-        width:100px;
-        height:100px;
-    }
+
     .logonav{
         margin-left:2px;
         width:18vw;
@@ -243,7 +240,7 @@ header{
         padding:0 0 0 3vw;
         margin:0 0 0 3vw;
         text-align:end;
-        font-size: clamp(0.2rem,3vw,2rem);
+        font-size: clamp(0.2rem,3.5vw,2rem);
     }
 
     header{
