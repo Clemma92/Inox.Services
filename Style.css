@@ -210,7 +210,7 @@ header{
 @media (max-width:1024px)
 {
     .sezione1{
-        grid-template-rows: 5dvh 85dvh 10dvh;
+        grid-template-rows: 5dvh 80dvh 15dvh;
     }
     .video-sfondo{
         object-fit: contain;
