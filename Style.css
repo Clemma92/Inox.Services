@@ -212,6 +212,9 @@ header{
     .sezione1{
         grid-template-rows: 7dvh 83dvh 10dvh;
     }
+    .sezione2{
+        grid-template-rows: 7dvh 83dvh 10dvh;
+    }
     .video-sfondo{
         object-fit: contain;
     }
