@@ -1,8 +1,9 @@
-a{
-    text-decoration: none;
-    color: black;
-}
 body{
+    margin:0;
+    padding:0;
+    width:100vw;
+}
+.sezione1{
     display:grid;
     grid-template-rows: 10dvh 75dvh 15dvh;
     background-color:black;
@@ -10,6 +11,25 @@ body{
     font-size:10px;
     font-weight: bold;
     transition:background 0.5s ease-in-out;
+}
+.sezione2{
+    display:grid;
+    grid-template-rows: 10dvh 75dvh 15dvh;
+    background-color:black;
+    margin:0px;
+    font-size:10px;
+    font-weight: bold;
+    transition:background 0.5s ease-in-out;
+}
+.navFissa{
+    box-sizing: border-box;
+    height: 10dvh;
+    width: 100vw;
+    position:fixed;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 nav{
     display:flex;
@@ -109,6 +129,7 @@ video{
     box-shadow: black 3px 3px 5px;
     cursor: pointer;
 }
+
 .box>.box-testo:hover{
     scale:1.05;
 }
@@ -181,6 +202,9 @@ h1.giallo{
 }
 header{
     display:none;
+}
+.active{
+    color: rgb(151, 0, 0);
 }
 
 @media (max-width:1024px)
@@ -294,5 +318,8 @@ header{
     }
     .menu-elm::after{
         display:none;
+    }
+    .spostamento{
+        transition: transform 0.8s ease-in-out, scale 0.3s ease-in-out;
     }
 }    

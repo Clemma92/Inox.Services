@@ -1,23 +1,6 @@
 let transitioned = false;
 const video = document.querySelector('video');
 const sfondo = document.querySelector('.sfondo');
-// function adjustSfondo() {
-//     if(window.matchMedia("(min-width: 1024px)").matches){
-//         const navbar = document.querySelector('nav');
-//         const navbarHeight = navbar.offsetHeight;
-//         const viewportHeight = document.documentElement.clientHeight;
-//         sfondo.style.top = `${navbarHeight}px`;
-//         sfondo.style.height = `${viewportHeight - navbarHeight}px`;
-//     }
-//     else{
-//         const navbar = document.querySelector('header');
-//         const navbarHeight = navbar.offsetHeight;
-//         const viewportHeight = document.documentElement.clientHeight;
-//         sfondo.style.top = `${navbarHeight}px`;
-//         sfondo.style.height = `${viewportHeight - navbarHeight}px`;
-//     }
-// }
-
 function SlittaBox(numero, box){
     if (numero < 0 || numero >= box.length) return;
     box[numero].style.transform = 'translateX(0)';
@@ -34,58 +17,40 @@ function CambiaSfondo(callback) {
             }
         }, {once: true});          
     }
-    document.addEventListener('transitionend', ()=>{
-        transitioned = true
-    });
 }
-
-function animateOut(){
-    let navBar = document.querySelector('nav');
-    let boxContainer = document.querySelectorAll('.box-testo');
-    let logoN = document.querySelector('.logo');
-    let btnmove = document.querySelector('.btn');
-    logoN.style.transition = 'transform 0.8s ease-in-out';
-    btnmove.style.transition = 'transform 0.8s ease-in-out, scale 0.4s ease-in-out';
+function animateOut(e){
+    let spostaCnt = document.querySelectorAll('.spostamento');
     if (transitioned===true){
-            setTimeout(() => {
-                boxContainer.forEach((boxContainer) =>{
-                boxContainer.style.transform='translateX(10vw)';
-            });},300);
-            setTimeout(()=>{
-                logoN.style.transform='translate(10vw)';
-            },300);
-            setTimeout(()=>{
-                navBar.style.transform='translate(-80vw)';
-            },300);
-            setTimeout(()=>{
-                btnmove.style.transform='translate(10vw)';
-            },300);
         transitioned=false;
+        spostaCnt.forEach((spostaCnt) =>{
+            spostaCnt.style.transform='translateX(0vw)';
+        })
     }
 }
 function animateIn(e){
-    let navBar = document.querySelector('nav');
-    const direction = window.getComputedStyle(navBar).flexDirection;
-    if(direction === 'column'){
-        let boxContainer = document.querySelectorAll('.box-testo');
-        let logoN = document.querySelector('.logo');
-        let btnmove = document.querySelector('.btn');
-        let menubtn = document.querySelector('.menu-btn');
-        if(!navBar.contains(e.target) && !menubtn.contains(e.target)){
-            for (let i=0; i<boxContainer.length; i++){
-                    setTimeout(() =>SlittaBox(i, boxContainer),100 * i);
-            }
-            setTimeout(()=>{
-                    btnmove.style.transform='translate(0)';
-            },100);
-                setTimeout(()=>{
-                    logoN.style.transform='translate(0)';
-            },100);
-                navBar.style.transform='translate(-100vw)';
-                transitioned=true;
-        }
+    let spostaCnt = document.querySelectorAll('.spostamento');
+    transitioned=true;
+        spostaCnt.forEach((spostaCnt) =>{
+            spostaCnt.style.transform='translateX(10vw)';
+    });
+}
+function spostaNav(e, callback){
+    if(transitioned===false){
+        const navBar = document.querySelector('nav');
+        navBar.style.transform='translate(-80vw)';
+        transitioned=true;
+        callback(e, navBar);
     }
 }
+function ritraiNav(e, callback){
+    const navBar = document.querySelector('nav');
+    const menubtn = document.querySelector('.menu-btn');
+    if(transitioned===true && !navBar.contains(e.target) && !menubtn.contains(e.target)){
+        navBar.style.transform='translate(-100vw)';
+    callback(e, navBar);
+    }
+}
+
 
 function ridimensionamento(){
     let navBar = document.querySelector('nav');
@@ -94,13 +59,12 @@ function ridimensionamento(){
     }
     else{
         navBar.style.transform='translate(-100vw)';
-
     }
 }
 
 video.addEventListener('ended', () => CambiaSfondo(SlittaBox));
-document.querySelector('.menu-btn').addEventListener('click', animateOut);
+document.querySelector('.menu-btn').addEventListener('click',(event)=> spostaNav(event, animateIn));
+document.addEventListener('click',(event)=>ritraiNav(event, animateOut));
 window.addEventListener("resize", ridimensionamento);
-document.addEventListener('click', animateIn);
 
 
