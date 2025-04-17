@@ -227,6 +227,7 @@ header{
     }
 
     .box>.box-testo{
+        outline:none;
         width: clamp(50%,70%,90%);
         min-width:0;
         max-width:100%;
