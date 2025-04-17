@@ -5,7 +5,7 @@ body{
 }
 .sezione1{
     display:grid;
-    grid-template-rows: 7dvh 85dvh 3dvh;
+    grid-template-rows: 10dvh 75dvh 15dvh;
     background-color:black;
     margin:0px;
     font-size:10px;
@@ -209,8 +209,8 @@ header{
 
 @media (max-width:1024px)
 {
-    body{
-        grid-template-rows: 5dvh 85dvh 10dvh;
+    .sezione1{
+        grid-template-rows: 5dvh 90dvh 5dvh;
     }
     .video-sfondo{
         object-fit: contain;
@@ -290,8 +290,7 @@ header{
         z-index:3;
         opacity:1;
         transition: scale 0.2s ease-in-out ,opacity 0.4s ease-in-out;
-        align-self:center;
-        justify-self: center;
+        align-self: start;
     }
     .btn{
         position:relative;
