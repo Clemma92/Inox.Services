@@ -61,9 +61,8 @@ function ridimensionamento(){
         navBar.style.transform='translate(-100vw)';
     }
 }
-parallasse(){
+function parallasse(){
 let sfondo2 = document.getElementsByClassName('sfondo2');
-
 }
 
 if(video){video.addEventListener('ended', () => CambiaSfondo(SlittaBox))};
