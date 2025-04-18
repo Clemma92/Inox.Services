@@ -61,10 +61,14 @@ function ridimensionamento(){
         navBar.style.transform='translate(-100vw)';
     }
 }
+parallasse(){
+let sfondo2 = document.getElementsByClassName('sfondo2');
 
-video.addEventListener('ended', () => CambiaSfondo(SlittaBox));
+}
+
+if(video){video.addEventListener('ended', () => CambiaSfondo(SlittaBox))};
 document.querySelector('.menu-btn').addEventListener('click',(event)=> spostaNav(event, animateIn));
 document.addEventListener('click',(event)=>ritraiNav(event, animateOut));
 window.addEventListener("resize", ridimensionamento);
-
+window.addEventListener('scroll', parallasse);
 
